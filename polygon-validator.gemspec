@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Validate points inside polygons'
   spec.description   = spec.summary
-  spec.homepage      = 'https://github.com/standout'
+  spec.homepage      = 'https://github.com/standout/polygon-validator'
   spec.license       = 'MIT'
 
   # Specify which files should be added to the gem when it is released.  The
