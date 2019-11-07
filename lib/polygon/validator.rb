@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
+require 'polygon'
 require 'polygon/validator/version'
+require 'polygon/point'
+require 'polygon/shape'
 
 module Polygon
   # Validator service for polygon shapes
