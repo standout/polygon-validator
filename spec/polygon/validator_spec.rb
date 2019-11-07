@@ -32,7 +32,7 @@ RSpec.describe Polygon::Validator do
     expect(validator.shape).to eq(shape)
   end
 
-  describe '#point_inside_shape?' do
+  describe '#contains_point?' do
     context 'when shape is a square' do
       let(:points) do
         [
@@ -46,14 +46,14 @@ RSpec.describe Polygon::Validator do
       context 'and point is in shape' do
         it 'will be true' do
           point = Polygon::Point.new(x: 150, y: 150)
-          expect(validator.point_inside_shape?(point, shape)).to be true
+          expect(validator.contains_point?(point)).to be true
         end
       end
 
       context 'and point is not in shape' do
         it 'will be false' do
           point = Polygon::Point.new(x: 250, y: 150)
-          expect(validator.point_inside_shape?(point, shape)).to be false
+          expect(validator.contains_point?(point)).to be false
         end
       end
     end
@@ -85,7 +85,7 @@ RSpec.describe Polygon::Validator do
             [189, 385]
           ].each do |x, y|
             point = Polygon::Point.new(x: x, y: y)
-            expect(validator.point_inside_shape?(point, shape)).to be true
+            expect(validator.contains_point?(point)).to be true
           end
         end
       end
@@ -101,7 +101,7 @@ RSpec.describe Polygon::Validator do
             [350, 260]
           ].each do |x, y|
             point = Polygon::Point.new(x: x, y: y)
-            expect(validator.point_inside_shape?(point, shape)).to be false
+            expect(validator.contains_point?(point)).to be false
           end
         end
       end

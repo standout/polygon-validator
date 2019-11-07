@@ -19,14 +19,12 @@ module Polygon
       @shape = shape
     end
 
-    # Validate if a point is inside a shape
+    # Validate if a point is inside the shape
     #
     # @param [Polygon::Point] point the point to validate if it is inside the
     #   shape
-    # @param [Polygon::Shape] shape the shape that may or may not contain the
-    #   point
     # @return [true, false] true if point is inside the shape
-    def point_inside_shape?(point, shape)
+    def contains_point?(point)
       points = shape.points
       winding_number = 0
 
